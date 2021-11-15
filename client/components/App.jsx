@@ -1,8 +1,9 @@
 import React from 'react'
-
+import { Route } from 'react-router-dom'
 
 // Components
 import Landing from './Landing'
+import Dashboard from './Dashboard'
 
 
 function App () {
@@ -10,7 +11,8 @@ function App () {
 
   return (
       <div className='app'>
-        <Landing />
+        <Route exact path='/dashboard' component={Dashboard} />
+        <Route exact path='/' component={Landing} />
       </div>
   )
 }
