@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 
 // Components
 import Landing from './Landing'
-import Dashboard from './Dashboard/Dashboard'
+import Dashboard from './Dashboard'
 
 
 function App () {
