@@ -1,13 +1,11 @@
 import React from 'react'
 
-function App (props) {
+function App () {
 
   return (
-    <>
       <div className='app'>
         Bug tracker working
       </div>
-    </>
   )
 }
 
