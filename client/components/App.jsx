@@ -5,7 +5,7 @@ function App (props) {
   return (
     <>
       <div className='app'>
-        Bug tracker working
+        Bug tracker working test
       </div>
     </>
   )
