@@ -10,7 +10,7 @@ function App () {
   const [passwordError, setPasswordError] = useState('')
   const [hasAccount, setHasAccount] = useState(false)
 
-
+  // Handles user sign in / updates state with error messages if any are made
   const handleLogIn = () => {
     fire
       auth()
@@ -29,6 +29,7 @@ function App () {
       })
   }
 
+  // Handles user sign up / updates state with error messages if any are made
   const handleSignUp = () => {
     fire
       auth()
@@ -46,7 +47,26 @@ function App () {
       })
   }
 
+  // Signs users out of logged in account
+  const handleSignOut = () => {
+    fire.auth().signOut();
+  }
 
+  // Updates user state if valid user found
+  const authListener = () => {
+    fire.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user)
+      } else {
+        setUser('')
+      }
+    })
+  }
+
+  // Checks for user on load
+  useEffect(() => {
+    authListener()
+  }, [])
 
   return (
       <div className='app'>
