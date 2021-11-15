@@ -1,8 +1,6 @@
-
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAsm3MOhV0FcK4_shyRJkJMHBHxwXR32yc",
   authDomain: "bug-tracker-66294.firebaseapp.com",
@@ -12,7 +10,6 @@ const firebaseConfig = {
   appId: "1:36423460663:web:c11ec41a761a40946f9cb2"
 };
 
-
 const fire = initializeApp(firebaseConfig);
 
-export default fire;
+export const auth = getAuth(fire);
