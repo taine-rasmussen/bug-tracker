@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 
 const Landing = () => {
@@ -13,6 +14,7 @@ const Landing = () => {
   const [registerPassword, setRegisterPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [name, setName] = useState("");
   const [user, setUser] = useState({});
 
   onAuthStateChanged(auth, (currentUser) => {
@@ -25,12 +27,15 @@ const Landing = () => {
         auth,
         registerEmail,
         registerPassword
-      );
+      )
+         updateProfile(auth.currentUser, {
+         displayName: name
+      })
       console.log(user);
     } catch (error) {
       console.log(error.message);
     }
-  };
+      };
 
   const login = async () => {
     try {
@@ -54,6 +59,12 @@ const Landing = () => {
     <div className="landing-container">
       <div className='landing-register-container'>
         <h3> Register User </h3>
+        <input
+          placeholder="Name..."
+          onChange={(event) => {
+            setName(event.target.value);
+          }}
+        />
         <input
           placeholder="Email..."
           onChange={(event) => {
@@ -81,6 +92,7 @@ const Landing = () => {
         />
         <input
           placeholder="Password..."
+          type='password'
           onChange={(event) => {
             setLoginPassword(event.target.value);
           }}
@@ -90,7 +102,7 @@ const Landing = () => {
       </div>
 
       <div className='landing-info-container'>
-         <h4> User Logged In: {user?.email}</h4>
+         <h4> User Logged In: {user?.displayName}</h4>
          <button onClick={logout}> Sign Out </button>
       </div>
     </div>
