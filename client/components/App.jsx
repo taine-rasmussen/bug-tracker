@@ -29,6 +29,23 @@ function App () {
       })
   }
 
+  const handleSignUp = () => {
+    fire
+      auth()
+      createUserWithEmailAndPassword(email, password)
+      .catch((err) => {
+        switch (err.code){
+          case "auth/email-already-in-use":
+          case "auth/Invalid-email ":
+            setEmailError(err.message);
+            break;
+          case "auth/weak -password":
+            setPasswordError(err.message);
+            break;
+        }
+      })
+  }
+
 
 
   return (
