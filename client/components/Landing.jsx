@@ -102,11 +102,6 @@ const Landing = () => {
           <button onClick={login}> Login</button>
         </Link>
       </div>
-
-      <div className='landing-info-container'>
-         <h4> User Logged In: {user?.displayName}</h4>
-         <button onClick={logout}> Sign Out </button>
-      </div>
     </div>
   );
 }
