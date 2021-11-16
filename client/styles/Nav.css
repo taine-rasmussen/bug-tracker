@@ -1,0 +1,18 @@
+.nav-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-user {
+  font-size: 1.5rem;
+}
+
+.nav-signout button {
+  margin: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 2px solid #000;
+}

@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { getAuth, onAuthStateChanged, signOut} from "firebase/auth";
 import { auth } from '../firebase-config'
 import { Link } from 'react-router-dom'
+import '../styles/Nav.css'
 
 const Nav = () => {
 
