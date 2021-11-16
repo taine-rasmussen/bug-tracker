@@ -1,0 +1,52 @@
+.landing-container {
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-sub-container {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem;
+  width: 350px;
+  height: 350px;
+}
+
+.sub-header {
+  margin-bottom: -2rem;
+  font-size: 1.5rem;
+}
+
+.sub-input-container {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-input-container input {
+  margin: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 2px solid #000;
+}
+
+.sub-input-container p {
+  font-size: 0.75rem;
+  margin: 0rem 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+.sub-input-container button {
+  margin: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 2px solid #000;
+}
+
+.sub-login-btn {
+  width: 95%;
+}

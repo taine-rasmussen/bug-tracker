@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom'
 const Nav = () => {
 
    const [user, setUser] = useState({});
-   const authh = getAuth();
-   const activeUser = authh.currentUser;
+   const userAuth = getAuth();
+   const activeUser = userAuth.currentUser;
+
 
    onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -18,10 +19,8 @@ const Nav = () => {
    const logout = async () => {
       await signOut(auth);
    };
-  console.log(user)
 
-
-
+   console.log(user)
 
    return (
       <div className="nav-container">
