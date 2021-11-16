@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { auth } from "../firebase-config";
+import { Link } from 'react-router-dom'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -97,8 +98,9 @@ const Landing = () => {
             setLoginPassword(event.target.value);
           }}
         />
-
-        <button onClick={login}> Login</button>
+        <Link to='dashboard'>
+          <button onClick={login}> Login</button>
+        </Link>
       </div>
 
       <div className='landing-info-container'>
