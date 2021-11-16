@@ -26,16 +26,16 @@ const Nav = () => {
    console.log(user)
 
    return (
-      <div className="nav-container">
-         <div className="nav-user">
-            <h2>Welcome, {activeUser?.displayName}</h2> 
+         <div className="nav-container">
+            <div className="nav-user">
+               <h2>Welcome, {activeUser?.displayName}</h2> 
+            </div>
+            <div className="nav-signout">
+               <Link to='/'>
+                  <button onClick={logout}> Sign Out <span><ImExit /></span></button>
+               </Link>
+            </div>
          </div>
-         <div className="nav-signout">
-            <Link to='/'>
-               <button onClick={logout}> Sign Out <span><ImExit /></span></button>
-            </Link>
-         </div>
-      </div>
    )
 }
 export default Nav
