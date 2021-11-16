@@ -1,10 +1,20 @@
 .landing-container {
   height: 80vh;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.landing-container h1 {
+  font-size: 3rem;
+}
+
+.landing-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
 }
 
 .landing-sub-container {

@@ -22,6 +22,7 @@ const Landing = () => {
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
   });
+  
 
   const register = async () => {
     try {
@@ -52,14 +53,15 @@ const Landing = () => {
     }
   };
 
-  // Handles user logging out
-  const logout = async () => {
-    await signOut(auth);
-  };
 
   return (
     <div className="landing-container">
 
+
+        <h1>Bug Tracker</h1>
+
+
+      <div className="landing-form">
       <div className='landing-sub-container'>
         <div className='sub-header'>
           <h3>Register User</h3>
@@ -68,16 +70,16 @@ const Landing = () => {
         <div className='sub-input-container'>
           <input
             placeholder="Name..."
-            onChange={(event) => { setName(event.target.value);}}
+            onChange={(event) => { setName(event.target.value)}}
           />
           <input
             placeholder="Email..."
-            onChange={(event) => { setRegisterEmail(event.target.value);}}
+            onChange={(event) => { setRegisterEmail(event.target.value)}}
           />
           <input
             placeholder="Create password..."
             type='password'
-            onChange={(event) => {setRegisterPassword(event.target.value);}}
+            onChange={(event) => {setRegisterPassword(event.target.value)}}
           />
           <p>Password must be at least 7 characters long.</p>
           
@@ -106,6 +108,7 @@ const Landing = () => {
             <button onClick={login} className='sub-login-btn'> Login</button>
           </Link>
         </div>
+      </div>
       </div>
     </div>
   );
