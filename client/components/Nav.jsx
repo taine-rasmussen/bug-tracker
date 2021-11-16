@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { getAuth, onAuthStateChanged, signOut} from "firebase/auth";
 import { auth } from '../firebase-config'
-
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
 
@@ -21,13 +21,17 @@ const Nav = () => {
   console.log(user)
 
 
+
+
    return (
       <div className="nav-container">
          <div className="nav-user">
             <h2>Welcome, {activeUser?.displayName}</h2> 
          </div>
          <div className="nav-signout">
-            <button onClick={logout}> Sign Out </button>
+            <Link to='/'>
+               <button onClick={logout}> Sign Out </button>
+            </Link>
          </div>
       </div>
    )
