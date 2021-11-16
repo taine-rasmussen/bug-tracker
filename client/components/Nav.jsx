@@ -2,6 +2,9 @@ import React, {useState} from 'react'
 import { getAuth, onAuthStateChanged, signOut} from "firebase/auth";
 import { auth } from '../firebase-config'
 import { Link } from 'react-router-dom'
+import '../styles/Nav.css'
+import { ImExit } from 'react-icons/im';
+
 
 const Nav = () => {
 
@@ -29,7 +32,7 @@ const Nav = () => {
          </div>
          <div className="nav-signout">
             <Link to='/'>
-               <button onClick={logout}> Sign Out </button>
+               <button onClick={logout}> Sign Out <span><ImExit /></span></button>
             </Link>
          </div>
       </div>

@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { auth } from "../firebase-config";
 import { Link } from 'react-router-dom'
 import '../styles/Landing.css'
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut,
   updateProfile,
 } from "firebase/auth";
 
