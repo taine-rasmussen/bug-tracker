@@ -56,8 +56,7 @@ const Landing = () => {
 
   return (
     <>
-      {user?.displayName ? <Redirect to="/dashboard" /> : <Redirect to="/"/>}
-
+      {user?.displayName ? <Redirect to="/dashboard" /> : null}
       <div className="landing-container">
           <h1>Bug Tracker</h1>
         <div className="landing-form">
