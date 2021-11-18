@@ -56,8 +56,7 @@ const Landing = () => {
 
   return (
     <>
-      {user?.displayName ? <Redirect to="/dashboard" /> : <Redirect to="/"/>}
-
+      {user?.displayName ? <Redirect to="/dashboard" /> : null}
       <div className="landing-container">
           <h1>Bug Tracker</h1>
         <div className="landing-form">
@@ -67,7 +66,7 @@ const Landing = () => {
           </div>
 
           <div className='sub-input-container'>
-            <input
+            <input  
               placeholder="Name..."
               onChange={(event) => { setName(event.target.value)}}
             />
