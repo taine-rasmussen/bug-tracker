@@ -66,7 +66,7 @@ const Landing = () => {
           </div>
 
           <div className='sub-input-container'>
-            <input
+            <input  
               placeholder="Name..."
               onChange={(event) => { setName(event.target.value)}}
             />
