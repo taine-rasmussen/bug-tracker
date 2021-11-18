@@ -1,6 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap");
+:root {
+  --white: #ffffff;
+  --dark: #222b42;
+  --accent: #ff5760;
+}
 
 body {
-  margin: 0rem 8rem;
-  font-family: "Zen Antique Soft", serif;
+  margin: 2em 8rem;
+  background-color: var(--white);
+}
+
+h1 {
+  color: var(--dark);
 }

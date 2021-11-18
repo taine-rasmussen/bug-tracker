@@ -29,10 +29,7 @@ const Dashboard = () => {
    return (
       <div className='dashboard-container'>
          <Nav />
-
             <button onClick={test}>test</button>
-
-
             <h1>{projectData[0]?.name}</h1>
             <h1>{projectData[0]?.id}</h1>
             <h1>{projectData[0]?.issue}</h1>
