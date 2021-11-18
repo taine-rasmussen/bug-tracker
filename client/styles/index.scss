@@ -4,11 +4,30 @@
   --accent: #ff5760;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 body {
   margin: 2em 8rem;
-  background-color: var(--white);
+  background-color: var(--dark);
 }
 
 h1 {
-  color: var(--dark);
+  color: var(--accent);
+  font-size: 3.5rem;
+  text-shadow: var(--white) 0.5px 0.5px;
+}
+
+h3 {
+  color: var(--white);
+  text-shadow: var(--accent) 1px 1px;
+}
+
+p {
+  color: var(--white);
+  font-size: 0.75rem;
 }
