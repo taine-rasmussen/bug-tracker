@@ -1,26 +1,40 @@
 import React, { useState } from 'react'
+import '../styles/AddProject.css'
 
-const AddProject = () => {
+const AddProject = ({setAddForm, addForm}) => {
 
    const [newProjectName, setNewProjectName] = useState('')
    const [newProjectIusse, setNewProjectIssue] = useState('')
    const [newProjetPriority, setNewProjectPriority] = useState('')
-
+   const [newProjectComments, setNewProjectComments] = useState('')
 
    return (
       <div className="addproject-container">
-         <input 
-            placeholder="Name..."
-            onChange={(event) => {setNewProjectName(event.target.value)}}
-         />
-         <input 
-            placeholder="Issue..."
-            onChange={(event) => {setNewProjectIssue(event.target.value)}}
-         />
-         <input 
-            placeholder="Priority..."
-            onChange={(event) => {setNewProjectPriority(event.target.value)}}
-         />
+         <div className="addproject-form-container">
+            <form onSubmit={(e) => handleSubmit(e)}>
+               <input 
+                  placeholder="Name..."
+                  onChange={(event) => {setNewProjectName(event.target.value)}}
+                  />
+               <input 
+                  placeholder="Issue..."
+                  onChange={(event) => {setNewProjectIssue(event.target.value)}}
+                  />
+               <input 
+                  placeholder="Priority..."
+                  onChange={(event) => {setNewProjectPriority(event.target.value)}}
+                  />
+               <input 
+                  placeholder="Comments..."
+                  onChange={(event) => {setNewProjectComments(event.target.value)}}
+                  />
+            </form>
+         </div>
+
+         <div className="addproject-btns">
+            <button>Add Project</button>
+            <button onClick={() => {setAddForm(!addForm)}}>Close form</button>
+         </div>
       </div>
    )
 }
