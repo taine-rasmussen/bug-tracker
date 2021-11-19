@@ -1,0 +1,22 @@
+.addproject-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.addproject-container input {
+  margin: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--dark);
+  background-color: var(--dark);
+  color: var(--white);
+  border-bottom: 1px solid var(--white);
+  caret-color: var(--accent);
+}
+
+.addproject-container input:focus {
+  border-bottom: 1px solid var(--accent);
+}
+
+.addproject-container input:hover {
+  border-bottom: 1px solid var(--accent);
+}

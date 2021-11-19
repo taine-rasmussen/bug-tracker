@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../styles/AddProject.css'
 
 const AddProject = () => {
 
