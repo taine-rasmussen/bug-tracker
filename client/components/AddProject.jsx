@@ -1,20 +1,25 @@
 import React, { useState } from 'react'
 
 const AddProject = () => {
+
+   const [newProjectName, setNewProjectName] = useState('')
+   const [newProjectIusse, setNewProjectIssue] = useState('')
+   const [newProjetPriority, setNewProjectPriority] = useState('')
+
+
    return (
       <div className="addproject-container">
          <input 
-            type="text" 
-            placeholder="Project name..."
-
+            placeholder="Name..."
+            onChange={(event) => {setNewProjectName(event.target.value)}}
          />
          <input 
-            type="text" 
             placeholder="Issue..."
+            onChange={(event) => {setNewProjectIssue(event.target.value)}}
          />
          <input 
-            type="text" 
             placeholder="Priority..."
+            onChange={(event) => {setNewProjectPriority(event.target.value)}}
          />
       </div>
    )
