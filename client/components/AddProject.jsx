@@ -8,26 +8,27 @@ const AddProject = ({setAddForm, addForm}) => {
    const [newProjetPriority, setNewProjectPriority] = useState('')
    const [newProjectComments, setNewProjectComments] = useState('')
 
-
    return (
       <div className="addproject-container">
          <div className="addproject-form-container">
-            <input 
-               placeholder="Name..."
-               onChange={(event) => {setNewProjectName(event.target.value)}}
-            />
-            <input 
-               placeholder="Issue..."
-               onChange={(event) => {setNewProjectIssue(event.target.value)}}
-            />
-            <input 
-               placeholder="Priority..."
-               onChange={(event) => {setNewProjectPriority(event.target.value)}}
-            />
-            <input 
-               placeholder="Comments..."
-               onChange={(event) => {setNewProjectComments(event.target.value)}}
-            />
+            <form onSubmit={(e) => handleSubmit(e)}>
+               <input 
+                  placeholder="Name..."
+                  onChange={(event) => {setNewProjectName(event.target.value)}}
+                  />
+               <input 
+                  placeholder="Issue..."
+                  onChange={(event) => {setNewProjectIssue(event.target.value)}}
+                  />
+               <input 
+                  placeholder="Priority..."
+                  onChange={(event) => {setNewProjectPriority(event.target.value)}}
+                  />
+               <input 
+                  placeholder="Comments..."
+                  onChange={(event) => {setNewProjectComments(event.target.value)}}
+                  />
+            </form>
          </div>
 
          <div className="addproject-btns">

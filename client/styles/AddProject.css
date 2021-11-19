@@ -1,9 +1,8 @@
 .addproject-container {
   display: flex;
-  /* border: 3px solid var(--white); */
   border-radius: 5px;
   padding: 15px;
-  width: 40%;
+  width: 30%;
   flex-direction: column;
 }
 
