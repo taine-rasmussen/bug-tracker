@@ -5,20 +5,18 @@ import { addDoc } from 'firebase/firestore'
 const AddProject = ({setAddForm, addForm, projecetData, projectCollectionRef}) => {
 
    const [newProjectName, setNewProjectName] = useState('')
-   const [newProjectComments, setNewProjectComments] = useState('example comment')
+   const [newProjectComments, setNewProjectComments] = useState({id: 'test comment'})
    const [newProjetPriority, setNewProjectPriority] = useState('')
    const [newProjectIusse, setNewProjectIssue] = useState({title: '', comments: [newProjectComments]})
 
 
    // Updates firestore with new project populated with data from form
-   // Resets window to update db data
    const createProject = async () => {
       await addDoc(projectCollectionRef, 
          {  Name: newProjectName,
             Issue: newProjectIusse,
             Priority: newProjetPriority,
          })
-
       }
 
    return (
