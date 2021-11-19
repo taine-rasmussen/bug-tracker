@@ -14,8 +14,17 @@
   margin: 0.5rem;
   padding: 0.75rem;
   border-radius: 5px;
-  border: 2px solid #000;
+  border: 3px solid var(--accent);
+  background-color: var(--dark);
+  color: var(--white);
   font-size: 1rem;
+  font-weight: bold;
+}
+
+.nav-signout button:hover {
+  background-color: var(--accent);
+  transform: scale(0.95);
+  color: var(--dark);
 }
 
 .nav-signout span {

@@ -12,7 +12,7 @@ const Nav = () => {
    const userAuth = getAuth();
    const activeUser = userAuth.currentUser;
 
-
+   // Gets user data
    onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
    });
@@ -23,16 +23,16 @@ const Nav = () => {
       await signOut(auth);
    };
 
-   console.log(user)
+   // console.log(user)
 
    return (
          <div className="nav-container">
             <div className="nav-user">
-               <h2>Welcome, {activeUser?.displayName}</h2> 
+               <h1>Welcome, {activeUser?.displayName}</h1> 
             </div>
             <div className="nav-signout">
                <Link to='/'>
-                  <button onClick={logout}> Sign Out <span><ImExit /></span></button>
+                  <button onClick={logout}>Sign Out</button>
                </Link>
             </div>
          </div>

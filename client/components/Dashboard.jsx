@@ -1,40 +1,46 @@
 import React, {useState, useEffect} from 'react'
 import { db } from '../firebase-config'
 import { collection, getDocs } from 'firebase/firestore'
+import '../styles/Dashboard.css'
+
 
 // Components
 import Nav from './Nav'
+import AddProject from './AddProject'
 
 
 const Dashboard = () => {
 
    const [projectData, setProjectData] = useState([])
-   const projectCollectionRef = collection(db, 'projects')
+   const [addForm, setAddForm] = useState(false)
+   const projectCollectionRef = collection(db, 'bug-tracker')
 
-
+   // GETs data from firestore and updates state with info
    useEffect(() => {
       const getProjects = async () => {
          const data = await getDocs(projectCollectionRef)
          setProjectData(data.docs.map((doc) => ({ ...doc.data(), id: doc.id})))
       }
       getProjects()
+      
    }, [])
+   
+   // Logs db data
+   projectData[0] ? console.log(projectData) :null
 
 
-   const test = () => {
-      console.log(projectData[0])
+   const addProjectForm = () => {
+      setAddForm(true)
    }
-
 
    return (
       <div className='dashboard-container'>
          <Nav />
-            <button onClick={test}>test</button>
-            <h1>{projectData[0]?.name}</h1>
-            <h1>{projectData[0]?.id}</h1>
-            <h1>{projectData[0]?.issue}</h1>
-            <h1>{projectData[0]?.priority}</h1>
-            
+         <div className='dashboard-add'>
+            <button onClick={addProjectForm}>Add Project</button>
+         </div>
+
+         {addForm ? <AddProject /> : null}
       </div>
    )
 }
