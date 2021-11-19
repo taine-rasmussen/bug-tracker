@@ -35,17 +35,18 @@
 .sub-input-container input {
   margin: 0.5rem;
   padding: 0.75rem;
-  border: 2px solid var(--dark);
+  border: 1px solid var(--dark);
   background-color: var(--dark);
   color: var(--white);
-  border-bottom: 3px solid var(--white);
+  border-bottom: 1px solid var(--white);
+  caret-color: var(--accent);
 }
 
 .sub-input-container input:focus {
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
 }
 .sub-input-container input:hover {
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
 }
 
 input::placeholder {
