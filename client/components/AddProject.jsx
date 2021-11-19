@@ -6,6 +6,7 @@ const AddProject = ({setAddForm}) => {
    const [newProjectName, setNewProjectName] = useState('')
    const [newProjectIusse, setNewProjectIssue] = useState('')
    const [newProjetPriority, setNewProjectPriority] = useState('')
+   const [newProjectComments, setNewProjectComments] = useState('')
 
 
    return (
@@ -22,6 +23,10 @@ const AddProject = ({setAddForm}) => {
             <input 
                placeholder="Priority..."
                onChange={(event) => {setNewProjectPriority(event.target.value)}}
+            />
+            <input 
+               placeholder="Comments..."
+               onChange={(event) => {setNewProjectComments(event.target.value)}}
             />
          </div>
 
