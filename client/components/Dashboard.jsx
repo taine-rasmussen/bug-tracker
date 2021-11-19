@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
+import '../styles/Dashboard.css'
 import { db } from '../firebase-config'
 import { collection, getDocs } from 'firebase/firestore'
-import '../styles/Dashboard.css'
+
 
 
 // Components
@@ -40,7 +41,9 @@ const Dashboard = () => {
             <button onClick={addProjectForm}>Add Project</button>
          </div>
 
-         {addForm ? <AddProject setAddForm={setAddForm} addForm={addForm} /> : null}
+         <div className='dashbaord-add-form'>
+            {addForm ? <AddProject setAddForm={setAddForm} addForm={addForm} projectData={projectData} projectCollectionRef={projectCollectionRef}/> : null}
+         </div>
       </div>
    )
 }
