@@ -1,9 +1,35 @@
 .addproject-container {
   display: flex;
+  border: 3px solid var(--white);
+  border-radius: 5px;
+  padding: 15px;
+  width: 40%;
   flex-direction: column;
 }
 
-.addproject-container input {
+.addproject-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.addproject-btns button {
+  margin: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 3px solid var(--accent);
+  background-color: var(--dark);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.addproject-btns button:hover {
+  background-color: var(--accent);
+  transform: scale(0.95);
+  color: var(--dark);
+}
+
+.addproject-form-container input {
   margin: 0.5rem;
   padding: 0.75rem;
   border: 1px solid var(--dark);
@@ -13,10 +39,10 @@
   caret-color: var(--accent);
 }
 
-.addproject-container input:focus {
+.addproject-form-container input:focus {
   border-bottom: 1px solid var(--accent);
 }
 
-.addproject-container input:hover {
+.addproject-form-container input:hover {
   border-bottom: 1px solid var(--accent);
 }

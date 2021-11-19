@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/AddProject.css'
 
-const AddProject = () => {
+const AddProject = ({setAddForm}) => {
 
    const [newProjectName, setNewProjectName] = useState('')
    const [newProjectIusse, setNewProjectIssue] = useState('')
@@ -10,18 +10,25 @@ const AddProject = () => {
 
    return (
       <div className="addproject-container">
-         <input 
-            placeholder="Name..."
-            onChange={(event) => {setNewProjectName(event.target.value)}}
-         />
-         <input 
-            placeholder="Issue..."
-            onChange={(event) => {setNewProjectIssue(event.target.value)}}
-         />
-         <input 
-            placeholder="Priority..."
-            onChange={(event) => {setNewProjectPriority(event.target.value)}}
-         />
+         <div className="addproject-form-container">
+            <input 
+               placeholder="Name..."
+               onChange={(event) => {setNewProjectName(event.target.value)}}
+            />
+            <input 
+               placeholder="Issue..."
+               onChange={(event) => {setNewProjectIssue(event.target.value)}}
+            />
+            <input 
+               placeholder="Priority..."
+               onChange={(event) => {setNewProjectPriority(event.target.value)}}
+            />
+         </div>
+
+         <div className="addproject-btns">
+            <button>Add Project</button>
+            <button onClick={() => {setAddForm(false)}}>Close form</button>
+         </div>
       </div>
    )
 }
