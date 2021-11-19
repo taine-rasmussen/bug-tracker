@@ -11,7 +11,7 @@ const Dashboard = () => {
    const [projectData, setProjectData] = useState([])
    const projectCollectionRef = collection(db, 'projects')
 
-
+   // GETs data from firestore and updates state with info
    useEffect(() => {
       const getProjects = async () => {
          const data = await getDocs(projectCollectionRef)
@@ -21,20 +21,15 @@ const Dashboard = () => {
    }, [])
 
 
-   const test = () => {
-      console.log(projectData[0])
-   }
-
+   // Logs db data
+   projectData[0] ? console.log(projectData) :null
 
    return (
       <div className='dashboard-container'>
          <Nav />
-            <button onClick={test}>test</button>
-            <h1>{projectData[0]?.name}</h1>
-            <h1>{projectData[0]?.id}</h1>
-            <h1>{projectData[0]?.issue}</h1>
-            <h1>{projectData[0]?.priority}</h1>
             
+
+
       </div>
    )
 }
