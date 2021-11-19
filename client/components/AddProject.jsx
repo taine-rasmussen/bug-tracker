@@ -1,12 +1,25 @@
 import React, { useState } from 'react'
 import '../styles/AddProject.css'
+import { addDoc } from 'firebase/firestore'
 
-const AddProject = ({setAddForm, addForm}) => {
+const AddProject = ({setAddForm, addForm, projecetData, projectCollectionRef}) => {
 
    const [newProjectName, setNewProjectName] = useState('')
    const [newProjectIusse, setNewProjectIssue] = useState('')
    const [newProjetPriority, setNewProjectPriority] = useState('')
-   const [newProjectComments, setNewProjectComments] = useState('')
+   const [newProjectComments, setNewProjectComments] = useState([])
+
+
+
+   const createProject = async () => {
+
+      await addDoc(projectCollectionRef, 
+         {  Name: newProjectName,
+            Issue: newProjectIusse,
+            Priority: newProjetPriority,
+            Comments: newProjectComments,
+         })
+      }
 
    return (
       <div className="addproject-container">
@@ -23,16 +36,12 @@ const AddProject = ({setAddForm, addForm}) => {
                <input 
                   placeholder="Priority..."
                   onChange={(event) => {setNewProjectPriority(event.target.value)}}
-                  />
-               <input 
-                  placeholder="Comments..."
-                  onChange={(event) => {setNewProjectComments(event.target.value)}}
-                  />
+               />
             </form>
          </div>
 
          <div className="addproject-btns">
-            <button>Add Project</button>
+            <button onClick={createProject}>Add Project</button>
             <button onClick={() => {setAddForm(!addForm)}}>Close form</button>
          </div>
       </div>
