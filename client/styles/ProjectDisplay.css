@@ -1,6 +1,24 @@
 .project-display-container {
   display: flex;
+
+  padding: 10px 20px;
+  width: 70%;
   flex-direction: column;
-  height: 70vh;
-  border-top: 1px solid var(--white);
+}
+
+.project-single-container {
+  display: flex;
+  border: 1.5px solid var(--white);
+  border-radius: 5px;
+  margin: 2rem 0rem;
+  padding: 10px 20px;
+}
+
+.project-header-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.project-priority {
+  margin-left: flex-end;
 }
