@@ -37,13 +37,13 @@ const Dashboard = () => {
    return (
       <div className='dashboard-container'>
          <Nav />
-         <div className='dashboard-add'>
-            <button onClick={addProjectForm}>Add Project</button>
-         </div>
+            <div className='dashboard-add'>
+               <button onClick={addProjectForm}>Add Project</button>
+            </div>
 
-         <div className='dashbaord-add-form'>
-            {addForm ? <AddProject setAddForm={setAddForm} addForm={addForm} projectData={projectData} projectCollectionRef={projectCollectionRef}/> : null}
-         </div>
+            <div className='dashbaord-add-form'>
+               {addForm ? <AddProject setAddForm={setAddForm} addForm={addForm} projectData={projectData} projectCollectionRef={projectCollectionRef}/> : null}
+            </div>
       </div>
    )
 }
