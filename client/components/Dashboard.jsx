@@ -8,6 +8,7 @@ import { collection, getDocs } from 'firebase/firestore'
 // Components
 import Nav from './Nav'
 import AddProject from './AddProject'
+import ProjectDisplay from './ProjectDisplay'
 
 
 const Dashboard = () => {
@@ -43,6 +44,10 @@ const Dashboard = () => {
 
             <div className='dashbaord-add-form'>
                {addForm ? <AddProject setAddForm={setAddForm} addForm={addForm} projectData={projectData} projectCollectionRef={projectCollectionRef}/> : null}
+            </div>
+
+            <div className='dashbaord-project-display'>
+               <ProjectDisplay projectData={projectData}/>
             </div>
       </div>
    )
