@@ -5,20 +5,20 @@ import { addDoc } from 'firebase/firestore'
 const AddProject = ({setAddForm, addForm, projecetData, projectCollectionRef}) => {
 
    const [newProjectName, setNewProjectName] = useState('')
-   const [newProjectIusse, setNewProjectIssue] = useState('')
+   const [newProjectComments, setNewProjectComments] = useState('example comment')
    const [newProjetPriority, setNewProjectPriority] = useState('')
-   const [newProjectComments, setNewProjectComments] = useState([])
+   const [newProjectIusse, setNewProjectIssue] = useState({title: '', comments: [newProjectComments]})
 
 
-
+   // Updates firestore with new project populated with data from form
+   // Resets window to update db data
    const createProject = async () => {
-
       await addDoc(projectCollectionRef, 
          {  Name: newProjectName,
             Issue: newProjectIusse,
             Priority: newProjetPriority,
-            Comments: newProjectComments,
          })
+
       }
 
    return (
@@ -26,12 +26,12 @@ const AddProject = ({setAddForm, addForm, projecetData, projectCollectionRef}) =
          <div className="addproject-form-container">
             <form onSubmit={(e) => handleSubmit(e)}>
                <input 
-                  placeholder="Name..."
+                  placeholder="Project name..."
                   onChange={(event) => {setNewProjectName(event.target.value)}}
                   />
                <input 
                   placeholder="Issue..."
-                  onChange={(event) => {setNewProjectIssue(event.target.value)}}
+                  onChange={(event) => {newProjectIusse.title = event.target.value}}
                   />
                <input 
                   placeholder="Priority..."
@@ -48,11 +48,3 @@ const AddProject = ({setAddForm, addForm, projecetData, projectCollectionRef}) =
    )
 }
  export default AddProject
-
-
- // build form for new bd project
-   // Name: string, Issue: string, Completed: Boolean, Priority: string, comments: array
-
-// React state to capture form data
-// import firestore and link it to this component 
-// Write func using addDoc to update firestore with new project
