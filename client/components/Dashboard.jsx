@@ -30,7 +30,7 @@ const Dashboard = () => {
 
 
    const addProjectForm = () => {
-      setAddForm(true)
+      setAddForm(!addForm)
    }
 
    return (
@@ -40,7 +40,7 @@ const Dashboard = () => {
             <button onClick={addProjectForm}>Add Project</button>
          </div>
 
-         {addForm ? <AddProject setAddForm={setAddForm} /> : null}
+         {addForm ? <AddProject setAddForm={setAddForm} addForm={addForm} /> : null}
       </div>
    )
 }

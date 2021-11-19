@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/AddProject.css'
 
-const AddProject = ({setAddForm}) => {
+const AddProject = ({setAddForm, addForm}) => {
 
    const [newProjectName, setNewProjectName] = useState('')
    const [newProjectIusse, setNewProjectIssue] = useState('')
@@ -32,7 +32,7 @@ const AddProject = ({setAddForm}) => {
 
          <div className="addproject-btns">
             <button>Add Project</button>
-            <button onClick={() => {setAddForm(false)}}>Close form</button>
+            <button onClick={() => {setAddForm(!addForm)}}>Close form</button>
          </div>
       </div>
    )
