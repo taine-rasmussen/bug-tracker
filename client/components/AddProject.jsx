@@ -10,7 +10,7 @@ const AddProject = ({setAddForm, addForm, projecetData, projectCollectionRef}) =
    const [newProjectIssue, setNewProjectIssue] = useState({ Issue: newProjectIssue,
                                                             Comments: [],
                                                             Priority: newProjetPriority,
-                                                            Description: newProjectDescription
+                                                            Description: newProjectDescription,
                                                          })
    // Updates firestore with new project populated with data from form
    const createProject = async () => {
