@@ -20,7 +20,7 @@ const ProjectDisplay = ({projectData}) => {
          'borderRadius': '5px',
          'color': '#222b42',
          'padding': '0px 16px',
-         'font-size': '1.5rem',
+         'fontSize': '1.5rem',
          'height': '75px',
    }
    
