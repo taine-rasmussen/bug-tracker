@@ -1,6 +1,5 @@
 .project-display-container {
   display: flex;
-
   padding: 10px 20px;
   width: 70%;
   flex-direction: column;
@@ -8,17 +7,18 @@
 
 .project-single-container {
   display: flex;
-  border: 1.5px solid var(--white);
-  border-radius: 5px;
+  border-bottom: 1.5px solid var(--white);
   margin: 2rem 0rem;
   padding: 10px 20px;
 }
 
-.project-header-container {
-  display: flex;
-  flex-direction: row;
+.project-single-container:hover {
+  border-bottom: 1.5px solid var(--accent);
 }
 
-.project-priority {
-  margin-left: flex-end;
+.project-header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
