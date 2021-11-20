@@ -5,17 +5,20 @@ import { addDoc } from 'firebase/firestore'
 const AddProject = ({setAddForm, addForm, projecetData, projectCollectionRef}) => {
 
    const [newProjectName, setNewProjectName] = useState('')
-   const [newProjectComments, setNewProjectComments] = useState({id: 'test comment'})
+   const [newProjectDescription, setNewProjectDescription] = useState('')
    const [newProjetPriority, setNewProjectPriority] = useState('')
-   const [newProjectIusse, setNewProjectIssue] = useState({title: '', comments: [newProjectComments]})
+   const [newProjectIssue, setNewProjectIssue] = useState({ Issue: newProjectIssue,
+                                                            Comments: [],
+                                                            Priority: newProjetPriority,
+                                                            Description: newProjectDescription
+                                                         })
 
 
    // Updates firestore with new project populated with data from form
    const createProject = async () => {
       await addDoc(projectCollectionRef, 
          {  Name: newProjectName,
-            Issue: newProjectIusse,
-            Priority: newProjetPriority,
+            Issues: [newProjectIssue],
          })
       }
 
@@ -26,14 +29,18 @@ const AddProject = ({setAddForm, addForm, projecetData, projectCollectionRef}) =
                <input 
                   placeholder="Project name..."
                   onChange={(event) => {setNewProjectName(event.target.value)}}
-                  />
+               />
                <input 
                   placeholder="Issue..."
-                  onChange={(event) => {newProjectIusse.title = event.target.value}}
-                  />
+                  onChange={(event) => {newProjectIssue.Issue = event.target.value}}
+               />
+               <input 
+                    placeholder="Issue description..."
+                    onChange={(event) => {newProjectIssue.Description = (event.target.value)}}
+               />
                <input 
                   placeholder="Priority..."
-                  onChange={(event) => {setNewProjectPriority(event.target.value)}}
+                  onChange={(event) => {newProjectIssue.Priority = (event.target.value)}}
                />
             </form>
          </div>
