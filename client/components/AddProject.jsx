@@ -12,8 +12,6 @@ const AddProject = ({setAddForm, addForm, projecetData, projectCollectionRef}) =
                                                             Priority: newProjetPriority,
                                                             Description: newProjectDescription
                                                          })
-
-
    // Updates firestore with new project populated with data from form
    const createProject = async () => {
       await addDoc(projectCollectionRef, 

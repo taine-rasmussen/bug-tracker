@@ -9,15 +9,41 @@
   font-size: 2.25rem !important;
 }
 
+.project-name span {
+  font-size: 2.25rem !important;
+  color: var(--white) !important;
+}
+
 .project-single-container {
   display: flex;
   flex-direction: column;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--white);
   padding: 10px 0px;
 }
 
 .project-header {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.arrow {
+  border: solid var(--white);
+  border-width: 0 2px 2px 0;
+  width: 3px;
+  height: 3px;
+  display: inline-block;
+  padding: 3px;
+  margin-right: 1.5rem;
+}
+
+.down {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+}
+
+.arrow:hover {
+  transform: rotate(45deg);
 }
 
 .project-issues-container {
@@ -39,7 +65,28 @@
 
 .single-issue-header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+}
+
+.issue-preview-title {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1.5px solid var(--accent);
+  width: 75%;
+  justify-content: space-between;
+}
+
+.issue-preview-title i {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.preview-title {
+  color: var(--white) !important;
+  font-size: 1.5rem !important;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 
 .issue-title {
