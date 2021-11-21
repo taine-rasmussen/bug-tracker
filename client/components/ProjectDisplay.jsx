@@ -40,7 +40,7 @@ const ProjectDisplay = ({projectData}) => {
                            )
                         })}
                         <div className="full-issue-container">
-                           {viewPreview ? <FullProject proj={proj} /> : null}
+                           {viewPreview ? <FullProject proj={proj} id={id} /> : null}
                         </div>
                      </div>
                   </div>
@@ -52,7 +52,7 @@ const ProjectDisplay = ({projectData}) => {
 }
 
 export default ProjectDisplay
-
+ // To Change where FullProject is rendered you need to change where its placed
 
 
 
