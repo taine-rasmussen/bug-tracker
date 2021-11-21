@@ -49,7 +49,7 @@ const Dashboard = () => {
 
             <div className='dashboard-project-display'>
                <ProjectDisplay projectData={projectData}/>
-               <Sidebar />
+               <Sidebar projectData={projectData}/>
             </div>
       </div>
    )
