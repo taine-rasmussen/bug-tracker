@@ -31,6 +31,7 @@ const ProjectDisplay = ({projectData}) => {
                         <h1>Project: <span>{proj.Name}</span></h1>
                      </div>
                      <div className="project-issue-preview">
+                        {console.log('test:', proj)}
                         {proj.Issues.map((issue, index) => {
                            return(
                               <div className="issue-container">
