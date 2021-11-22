@@ -33,15 +33,17 @@ const ProjectDisplay = ({projectData}) => {
                      <div className="project-issue-preview">
                         {proj.Issues.map((issue, index) => {
                            return(
-                              <div className="issue-preview-title" key={index}>
-                                 <h4 className='preview-title'>{issue.Issue}</h4>
-                                 <i onClick={toogleIssuePreview} className="arrow down"></i>
+                              <div className="issue-container">
+                                 <div className="issue-preview-title" key={index}>
+                                    <h4 className='preview-title'>{issue.Issue}</h4>
+                                    <i onClick={toogleIssuePreview} className="arrow down"></i>
+                                 </div> 
+                                 <div className="full-issue-container">
+                                       {viewPreview ? <FullProject proj={proj}  /> : null}
+                                     </div>
                               </div>
                            )
                         })}
-                        <div className="full-issue-container">
-                           {viewPreview ? <FullProject proj={proj}  /> : null}
-                        </div>
                      </div>
                   </div>
                </div>
