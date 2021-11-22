@@ -31,11 +31,7 @@ const FullProject = ({proj}) => {
      <div className='project-issues-container'>
                      {proj.Issues.map((issue, index) => {
                         return(
-                           <div className='project-single-issue' key={index}>
-                              <div className='single-issue-header'>
-                                 <h4 className='issue-title'>{issue.Issue}</h4>
-                              </div>
-                              <div className='project-body'>
+                              <div className='project-body' index={index}>
                                  <div className='issue-description'>
                                     <h3 className='description-title'><span>Description:</span></h3> <p>{issue.Description}</p>
                                     <h3><span>Comments:</span> {issue.Comments.length}</h3>
@@ -48,7 +44,6 @@ const FullProject = ({proj}) => {
                                     <h4>{issue.Priority}</h4>
                                  </div>
                               </div>
-                           </div>
                         )
                      })}
       </div>

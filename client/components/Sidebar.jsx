@@ -12,7 +12,7 @@ const Sidebar = ({projectData}) => {
          </div>
          <div className='sidebar-body-container'>
             <div className='sidebar-info'>
-               <h4>Active projects: {projectData.length}</h4>
+               <h4>Active projects: <span>{projectData.length}</span></h4>
             </div>
          </div>
       </div>

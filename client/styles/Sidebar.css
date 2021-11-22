@@ -16,3 +16,18 @@
   text-shadow: 0.8px 0.8px var(--white);
   font-style: italic;
 }
+
+.sidebar-body-container {
+  display: flex;
+  margin-top: -20px;
+  justify-content: center;
+}
+
+.sidebar-info {
+  color: var(--accent);
+  font-size: 1.75rem;
+}
+
+.sidebar-info span {
+  color: var(--white) !important;
+}
