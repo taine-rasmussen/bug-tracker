@@ -119,3 +119,7 @@
 .description-title h3 {
   color: var(--white) !important;
 }
+
+.full-issue-container {
+  margin-top: 1rem;
+}
