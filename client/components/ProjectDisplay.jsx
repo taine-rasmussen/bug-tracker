@@ -34,8 +34,8 @@ const ProjectDisplay = ({projectData}) => {
                         {console.log('test:', proj)}
                         {proj.Issues.map((issue, index) => {
                            return(
-                              <div className="issue-container">
-                                 <div className="issue-preview-title" key={index}>
+                              <div className="issue-container"  key={index}>
+                                 <div className="issue-preview-title">
                                     <h4 className='preview-title'>{issue.Issue}</h4>
                                     <i onClick={toogleIssuePreview} className="arrow down"></i>
                                  </div> 
