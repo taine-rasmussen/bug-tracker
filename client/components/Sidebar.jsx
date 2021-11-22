@@ -11,8 +11,19 @@ const Sidebar = ({projectData}) => {
             <h2>Tracker info</h2>
          </div>
          <div className='sidebar-body-container'>
+            <div className='sidebar-summary'>
+               <h4>Active projects: <span>{projectData.length}</span></h4>
+            </div>
             <div className='sidebar-info'>
-               <h4>Active projects: {projectData.length}</h4>
+               {projectData.map((proj, index) => {
+                  return(
+                     <div key={index} className='sidebar-project-info'>
+                        <h5>Name: <span>{proj.Name}</span></h5>
+                        <h5>Active tickets: <span>{proj.Issues.length}</span></h5>
+                     </div>
+                  )
+               })}
+
             </div>
          </div>
       </div>

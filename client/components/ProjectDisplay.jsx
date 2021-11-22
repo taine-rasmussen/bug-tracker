@@ -40,7 +40,7 @@ const ProjectDisplay = ({projectData}) => {
                            )
                         })}
                         <div className="full-issue-container">
-                           {viewPreview ? <FullProject proj={proj} id={id} /> : null}
+                           {viewPreview ? <FullProject proj={proj}  /> : null}
                         </div>
                      </div>
                   </div>

@@ -16,3 +16,25 @@
   text-shadow: 0.8px 0.8px var(--white);
   font-style: italic;
 }
+
+.sidebar-body-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -60px;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 1.75rem;
+}
+
+.sidebar-body-container span {
+  color: var(--white) !important;
+}
+
+.sidebar-info {
+  font-size: 1.6rem !important;
+}
+
+.sidebar-project-info {
+  border-bottom: 1px solid var(--white);
+  width: max-content;
+}
