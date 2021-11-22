@@ -19,15 +19,22 @@
 
 .sidebar-body-container {
   display: flex;
-  margin-top: -20px;
+  flex-wrap: wrap;
+  margin-top: -60px;
   justify-content: center;
-}
-
-.sidebar-info {
   color: var(--accent);
   font-size: 1.75rem;
 }
 
-.sidebar-info span {
+.sidebar-body-container span {
   color: var(--white) !important;
+}
+
+.sidebar-info {
+  font-size: 1.6rem !important;
+}
+
+.sidebar-project-info {
+  border-bottom: 1px solid var(--white);
+  width: max-content;
 }
