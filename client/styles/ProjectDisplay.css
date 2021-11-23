@@ -29,25 +29,6 @@
   flex-direction: column;
 }
 
-.arrow {
-  border: solid var(--white);
-  border-width: 0 2px 2px 0;
-  width: 3px;
-  height: 3px;
-  display: inline-block;
-  padding: 3px;
-  margin-right: 1.5rem;
-}
-
-.down {
-  transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-}
-
-.arrow:hover {
-  transform: rotate(45deg);
-}
-
 .project-issues-container {
   display: flex;
   flex-direction: column;
@@ -118,4 +99,21 @@
 
 .description-title h3 {
   color: var(--white) !important;
+}
+
+.issue-container button {
+  margin: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 2.2px solid var(--accent);
+  background-color: var(--dark);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.issue-container button:hover {
+  background-color: var(--accent);
+  color: var(--dark);
+  transform: scale(0.9);
 }

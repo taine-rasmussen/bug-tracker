@@ -11,15 +11,8 @@ const ProjectDisplay = ({projectData}) => {
    const [fullIssueData, setFullIssueData] = useState()
 
 
-
-   
-
-   // Projects should be collapsable to save space and not clog up page
-   // Use same logic as the form from AddProject - create another component and pass props down to be mapped inside of there instead of this components
-   // Only issue name and priority level should be visble without expanding 
-
-
-   const toogleIssuePreview = (id) => {
+   // Gets data for issue user clicks on and makes it available in state
+   const toogleTicketPreview = (id) => {
       setViewPreview(!viewPreview)
          const data = [...projectData.map((item) => {
             item.Issues.forEach((issue) => {
@@ -36,7 +29,6 @@ const ProjectDisplay = ({projectData}) => {
    return (
       <div className="project-display-container">
          {projectData.map((proj, index) => {
-         // {console.log('proj:', proj)}
             return(
                <div className="project-single-container" key={index}>
                   <div className="project-header">
@@ -49,7 +41,7 @@ const ProjectDisplay = ({projectData}) => {
                               <div className="issue-container"  key={issue.Id}>
                                  <div className="issue-preview-title">
                                     <h4 className='preview-title'>{issue.Issue}</h4>
-                                    <i onClick={() => toogleIssuePreview(issue.Id)} className="arrow down"></i>
+                                    <button onClick={() => toogleTicketPreview(issue.Id)} >Open</button>
                                  </div> 
                                  <div className="full-issue-container">
                                     {viewPreview ? <FullTicket fullIssueData={fullIssueData} /> : null}
@@ -67,7 +59,6 @@ const ProjectDisplay = ({projectData}) => {
 }
 
 export default ProjectDisplay
- // To Change where FullProject is rendered you need to change where its placed
 
 
 
