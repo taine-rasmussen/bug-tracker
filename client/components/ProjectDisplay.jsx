@@ -8,6 +8,7 @@ import FullProject from './FullProject'
 const ProjectDisplay = ({projectData}) => {
 
    const [viewPreview, setViewPreview] = useState(false)
+   const [previewData, setPreviewData] = useState(null)
 
 
    
@@ -16,14 +17,28 @@ const ProjectDisplay = ({projectData}) => {
    // Use same logic as the form from AddProject - create another component and pass props down to be mapped inside of there instead of this components
    // Only issue name and priority level should be visble without expanding 
 
-   const toogleIssuePreview = () => {
+
+   const toogleIssuePreview = (id) => {
       setViewPreview(!viewPreview)
+
+         const data = [...projectData.map((item) => {
+            item.Issues.forEach((issue) => {
+               console.log(id)
+               if (issue.Id === id){
+                  console.log('test', issue.Issue)
+               }
+            })
+            
+         })]
+         return data
    }
+
+            // console.log(item.Issues.forEach((issue) => {console.log('id test', issue.Id, issue.Issue)}))
 
    return (
       <div className="project-display-container">
          {projectData.map((proj, index) => {
-            
+         // {console.log('proj:', proj)}
             return(
                <div className="project-single-container" key={index}>
                   <div className="project-header">
@@ -31,16 +46,16 @@ const ProjectDisplay = ({projectData}) => {
                         <h1>Project: <span>{proj.Name}</span></h1>
                      </div>
                      <div className="project-issue-preview">
-                        {proj.Issues.map((issue, index) => {
+                        {proj.Issues.map((issue) => {
                            return(
-                              <div className="issue-container">
-                                 <div className="issue-preview-title" key={index}>
+                              <div className="issue-container"  key={issue.Id}>
+                                 <div className="issue-preview-title">
                                     <h4 className='preview-title'>{issue.Issue}</h4>
-                                    <i onClick={toogleIssuePreview} className="arrow down"></i>
+                                    <i onClick={() => toogleIssuePreview(issue.Id)} className="arrow down"></i>
                                  </div> 
                                  <div className="full-issue-container">
-                                       {viewPreview ? <FullProject proj={proj}  /> : null}
-                                     </div>
+                                    {/* {console.log('issue data:', issue)} */}
+                                 </div>
                               </div>
                            )
                         })}
