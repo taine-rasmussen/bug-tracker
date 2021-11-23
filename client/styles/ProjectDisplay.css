@@ -60,6 +60,11 @@
   justify-content: space-between;
 }
 
+.issue-btns {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .issue-preview-title i {
   margin-left: 2rem;
   margin-top: 1rem;

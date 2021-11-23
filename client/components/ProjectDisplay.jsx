@@ -10,7 +10,6 @@ const ProjectDisplay = ({projectData}) => {
    const [viewPreview, setViewPreview] = useState(false)
    const [fullIssueData, setFullIssueData] = useState()
 
-
    // Gets data for issue user clicks on and makes it available in state
    const toogleTicketPreview = (id) => {
       setViewPreview(!viewPreview)
@@ -41,15 +40,15 @@ const ProjectDisplay = ({projectData}) => {
                               <div className="issue-container"  key={issue.Id}>
                                  <div className="issue-preview-title">
                                     <h4 className='preview-title'>{issue.Issue}</h4>
-                                    <button onClick={() => toogleTicketPreview(issue.Id)} >Open</button>
+                                       <button onClick={() => toogleTicketPreview(issue.Id)} >Open</button>
                                  </div> 
-                                 <div className="full-issue-container">
-                                    {viewPreview ? <FullTicket fullIssueData={fullIssueData} /> : null}
-                                 </div>
                               </div>
                            )
                         })}
                      </div>
+                      <div className="full-issue-container">
+                            {viewPreview ? <FullTicket fullIssueData={fullIssueData} setViewPreview={setViewPreview} /> : null}
+                      </div>
                   </div>
                </div>
             )

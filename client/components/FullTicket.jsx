@@ -1,10 +1,10 @@
 import React from 'react'
 import '../styles/FullTicket.css'
 
-const FullTicket = ({fullIssueData}) => {
+const FullTicket = ({fullIssueData, setViewPreview}) => {
    return (
       <div className="ticket-container">
-         {fullIssueData.Id}
+         <button onClick={() => setViewPreview(false)}>Close</button>
       </div>
    )
 }
