@@ -1,2 +1,11 @@
 .ticket-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: 50vh;
+  width: 50vw;
+  margin-top: 15%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
 }
