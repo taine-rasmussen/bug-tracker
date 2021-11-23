@@ -3,12 +3,12 @@ import '../styles/ProjectDisplay.css'
 
 
 // Components
-import FullProject from './FullProject'
+import FullTicket from './FullTicket'
 
 const ProjectDisplay = ({projectData}) => {
 
    const [viewPreview, setViewPreview] = useState(false)
-   const [fullProjectData, setFullProjectData] = useState()
+   const [fullIssueData, setFullIssueData] = useState()
 
 
 
@@ -21,13 +21,12 @@ const ProjectDisplay = ({projectData}) => {
 
    const toogleIssuePreview = (id) => {
       setViewPreview(!viewPreview)
-
          const data = [...projectData.map((item) => {
             item.Issues.forEach((issue) => {
                console.log(id)
                if (issue.Id === id){
                   console.log('filtered data:', issue)
-                  setFullProjectData(issue)
+                  setFullIssueData(issue)
                }
             })
          })]
@@ -53,7 +52,7 @@ const ProjectDisplay = ({projectData}) => {
                                     <i onClick={() => toogleIssuePreview(issue.Id)} className="arrow down"></i>
                                  </div> 
                                  <div className="full-issue-container">
-                                    
+                                    {viewPreview ? <FullTicket fullIssueData={fullIssueData} /> : null}
                                  </div>
                               </div>
                            )
