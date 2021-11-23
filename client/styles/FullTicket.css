@@ -1,11 +1,96 @@
 .ticket-container {
   display: flex;
   position: fixed;
+  flex-wrap: wrap;
   top: 0;
   height: 50vh;
-  width: 50vw;
+  width: max-content;
+  min-width: 70vw;
   margin-top: 15%;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--white);
+  border-radius: 5px;
+  border: 3px solid var(--whites);
+  flex-direction: column;
+}
+
+.ticket-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1rem 0rem;
+}
+
+.ticket-header h2 {
+  color: var(--dark) !important;
+  font-size: 2rem;
+  margin-left: 1rem;
+  width: max-content;
+  border-bottom: 1px solid var(--accent);
+}
+
+.ticket-header button {
+  margin: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 2.2px solid var(--accent);
+  background-color: var(--dark);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: bold;
+  height: max-content;
+  margin-right: 1rem;
+}
+
+.ticket-header button:hover {
+  border: 2.2px solid var(--dark);
+  background-color: var(--accent);
+  color: var(--dark);
+  transform: scale(0.9);
+}
+
+.ticket-body {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0rem 2rem;
+  margin-top: -2rem;
+  justify-content: space-between;
+}
+
+.ticket-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-body h4 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--accent);
+  width: max-content;
+}
+
+.ticket-body p {
+  margin-top: -1rem;
+  color: var(--dark);
+  font-size: 1rem !important;
+  padding-left: 20px;
+}
+
+.ticket-footer {
+  display: flex;
+  padding: 0rem 2rem;
+  flex-direction: column;
+}
+
+.ticket-footer h4 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--accent);
+  width: max-content;
+}
+
+.ticket-footer p {
+  margin-top: -1rem;
+  padding-left: 20px;
+  color: var(--dark) !important;
+  font-size: 1rem !important;
 }
