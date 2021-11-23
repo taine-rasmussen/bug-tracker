@@ -8,7 +8,8 @@ import FullProject from './FullProject'
 const ProjectDisplay = ({projectData}) => {
 
    const [viewPreview, setViewPreview] = useState(false)
-   const [previewData, setPreviewData] = useState(null)
+   const [fullProjectData, setFullProjectData] = useState()
+
 
 
    
@@ -25,15 +26,13 @@ const ProjectDisplay = ({projectData}) => {
             item.Issues.forEach((issue) => {
                console.log(id)
                if (issue.Id === id){
-                  console.log('test', issue.Issue)
+                  console.log('filtered data:', issue)
+                  setFullProjectData(issue)
                }
             })
-            
          })]
          return data
    }
-
-            // console.log(item.Issues.forEach((issue) => {console.log('id test', issue.Id, issue.Issue)}))
 
    return (
       <div className="project-display-container">
@@ -54,7 +53,7 @@ const ProjectDisplay = ({projectData}) => {
                                     <i onClick={() => toogleIssuePreview(issue.Id)} className="arrow down"></i>
                                  </div> 
                                  <div className="full-issue-container">
-                                    {/* {console.log('issue data:', issue)} */}
+                                    
                                  </div>
                               </div>
                            )
