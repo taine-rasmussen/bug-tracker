@@ -13,7 +13,7 @@ const FullTicket = ({fullIssueData, setViewPreview}) => {
                <h4>Description:</h4>
                <p>{fullIssueData.Description}</p>
             </div>
-            <div>
+            <div className='ticket-priority'>
                {fullIssueData.Priority}
             </div>
          </div>

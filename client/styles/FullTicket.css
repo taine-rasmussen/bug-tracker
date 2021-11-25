@@ -63,6 +63,18 @@
   flex-direction: column;
 }
 
+.ticket-priority {
+  width: max-content;
+  height: max-content;
+  padding: 15px 20px;
+  border: 2px solid var(--dark);
+  background-color: var(--accent);
+  color: var(--dark);
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
 .ticket-body h4 {
   font-size: 1.5rem;
   border-bottom: 1px solid var(--accent);
