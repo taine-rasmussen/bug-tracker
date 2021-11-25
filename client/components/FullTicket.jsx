@@ -1,7 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../styles/FullTicket.css'
+import { updateDoc, doc } from 'firebase/firestore'
+
 
 const FullTicket = ({fullIssueData, setViewPreview}) => {
+
+
+   const [newComment, setNewComment] = useState('')
+
+   const addComment = async (id ) => {
+
+   }
+
+
+
+
    return (
       <div className="ticket-container">
          <div className="ticket-header">
@@ -18,15 +31,24 @@ const FullTicket = ({fullIssueData, setViewPreview}) => {
             </div>
          </div>
          <div className='ticket-footer'>
-            <h4>Comments:</h4>
-            {fullIssueData.Comments.map((coms) => {
-               return(
-                  <p key={fullIssueData.Id}>{coms}</p>
-               )
-            })}
-
+            <div className='ticket-comments'>
+               <h4>Comments:</h4>
+               {fullIssueData.Comments.map((coms) => {
+                  return(
+                     <p key={fullIssueData.Id}>{coms}</p>
+                  )
+               })}
+            </div>
+            <div className='ticket-add-comment'>
+               {console.log('comments:', newComment)}
+               <input 
+                  type="text"
+                  placeholder='New comment'
+                  onChange={(event) => {setNewComment(event.target.value)}}
+               />
+               <button onClick={() => {addComment(fullIssueData.Id)}}>Add comment</button>
+            </div>
          </div>
-         
       </div>
    )
 }
