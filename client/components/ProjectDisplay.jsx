@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../styles/ProjectDisplay.css'
 
 
+
 // Components
 import FullTicket from './FullTicket'
 
@@ -15,14 +16,13 @@ const ProjectDisplay = ({projectData}) => {
       setViewPreview(!viewPreview)
          const data = [...projectData.map((item) => {
             item.Issues.forEach((issue) => {
-               console.log(id)
                if (issue.Id === id){
                   console.log('filtered data:', issue)
                   setFullIssueData(issue)
                }
             })
          })]
-         return data
+      return data
    }
 
    return (
