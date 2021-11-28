@@ -25,3 +25,9 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+@media only screen and (max-width: 1000px) {
+  .dashboard-project-display {
+    flex-direction: column;
+  }
+}
