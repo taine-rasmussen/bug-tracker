@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import '../styles/FullTicket.css'
 import { updateDoc, doc } from 'firebase/firestore'
+import { db } from '../firebase-config'
+
 
 
 const FullTicket = ({fullIssueData, setViewPreview}) => {
@@ -9,7 +11,9 @@ const FullTicket = ({fullIssueData, setViewPreview}) => {
    const [newComment, setNewComment] = useState('')
 
    const addComment = async (id ) => {
-
+      const userDoc = doc(db, "bug-tracker", id);
+      // const newFields = {comment: newComment};
+      await updateDoc(userDoc, newComment)
    }
 
 
@@ -40,7 +44,6 @@ const FullTicket = ({fullIssueData, setViewPreview}) => {
                })}
             </div>
             <div className='ticket-add-comment'>
-               {console.log('comments:', newComment)}
                <input 
                   type="text"
                   placeholder='New comment'
